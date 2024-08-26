@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 - Reference Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #fffbe5; /* Light yellow background */
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background: #f4c542; /* Bright yellow background */
+            font-family: 'Arial Black', 'Comic Sans';
+            color: #333;
+            font-size: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(133, 55, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 100px; /* Adjust the size of the logo */
+        }
+
+        nav {
+            margin-left: auto;
+            padding-right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background: transparent;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #000; /* Black text color */
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #d4a600; /* Darker yellow underline */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #d4a600; /* Darker yellow text color */
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            padding: 120px 20px; /* Ensure space for the fixed header */
+            text-align: center;
+        }
+
+        .content a {
+            color: #f4c542; /* Yellow link color */
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+            color: #d4a600; /* Darker yellow color on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="ChemistryCornerLogo.png" alt="Chemistry Corner Logo">
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="EssentialElements.html">Essential Elements</a></li>
+                <li><a href="watercycle.html">Water Cycle</a></li>
+                <li><a href="interactive.html">Interactive</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+
+
+<br/>
+<img src="group.jpeg" height="500" width="650">
+<h1>
+Members:<br/><br/>
+<i>
+<img src="Audrey.jpeg" height="150" width="150"><br/>
+Lopez, Audrey Sophia F. <br/>
+FB account: <a href="https://www.facebook.com/audrey.lopez.75491?mibextid=LQQJ4d"> Facebook Account </a><br/>
+
+<img src="Loui.jpeg" height="150" width="150"><br/>
+Amameda, Louis Reidee S. <br/>
+FB account: <a href="https://www.facebook.com/loui.amameda?mibextid=LQQJ4d"> Facebook Account </a><br/>
+
+<img src="Javier.jpg" height="150" width="150"><br/>
+Concepcion, Javier C. <br/>
+FB account: <a href="https://www.facebook.com/profile.php?id=100088432394981&mibextid=LQQJ4d"> Facebook Account </a><br/>
+
+<img src="Rania.jpg" height="150" width="150"><br/>
+Rodriguez, Rania Ann R. <br/>
+FB account: <a href="https://www.facebook.com/profile.php?id=100077349726737&mibextid=LQQJ4d"> Facebook Account </a><br/>
+
+<img src="Shaliyah.jpeg" height="150" width="150"><br/>
+Cabuat, Shaliyah V. <br/>
+FB account: <a href="https://www.facebook.com/profile.php?id=61552487183229&mibextid=LQQJ4d"> Facebook Account </a>
+</i></h1><br/>
+
+
+<h2>References:</h2>
+        <a href="https://www.britannica.com/">Visit Britannica website</a>
+        <a href="https://www.w3schools.com/">Visit W3Schools website</a>
+        <a href="https://https://quizizz.com/">Visit Quizizz website</a>
+        <a href="https://https://en.wikipedia.org//">Visit Wikipedia website</a>
+
+    </div>
+</body>
+</html>

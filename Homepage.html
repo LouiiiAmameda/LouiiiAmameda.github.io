@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 - Homepage</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cooper Black', 'Comic Sans';
+            color: #fff;
+            background: url('HauPicture.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Prevent horizontal scroll */
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.6);
+            font-family: 'Arial Black', 'Comic Sans';
+            color: #fff;
+            font-size: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(133, 55, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header img {
+            height: 100px; /* Adjust the size of the logo */
+        }
+
+        nav {
+            margin-left: auto;
+            padding-right: 20px; /* Adjust padding to move nav bar to the right */
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background: transparent; /* Remove the background of the nav bar */
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #494444;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #d3d3d3;
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            text-align: center;
+            color: #fff;
+            padding: 150px 20px 100px; /* Adjust to fit header and footer */
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 1s forwards;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 1s forwards;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-top: 10px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-out 1.2s forwards;
+        }
+
+        .fade-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to right, #f0ecec 45%, transparent 70%);
+            overflow: hidden;
+            padding-left: 50px;
+        }
+
+        .text-content {
+            z-index: 1;
+            max-width: 40%;
+        }
+
+        .text-content h1 {
+            font-size: 2.5rem;
+            color: #2b2b2b;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .text-content p {
+            font-size: 1.7rem;
+            color: #4a4a4a;
+            margin-bottom: 30px;
+        }
+
+        .text-content button {
+            padding: 15px 30px;
+            background-color: #00a86b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="ChemistryCornerLogo.png">
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Essentialelements.html">Essential Elements</a></li>
+                <li><a href="watercycle.html">Water Cycle</a></li>
+                <li><a href="interactive.html">Interactive</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="fade-container">
+        <div class="text-content">
+            <h1>Chemistry Corner!</h1>
+            <p>Your go to destination for information like Essential Elements, how water behaves in its different states, and its role in the water cycle.
+                Whether you’re a student, teacher, or science enthusiast, our goal is to help you explore, learn, and share knowledge about the beauty of science!
+                At Chemistry Corner, we strive to be the trusted resource for students, teachers, and science lovers!</p>
+        </div>
+    </div>
+
+</body>
+</html>

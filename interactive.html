@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group 3 - Interactive Elements</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #F4EBE8;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(189, 233, 148, 0.6);
+            font-family: 'Arial Black', 'Comic Sans';
+            color: #A39A92;
+            font-size: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(133, 55, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 100px; /* Adjust the size of the logo */
+        }
+
+        nav {
+            margin-left: auto;
+            padding-right: 20px; /* Adjust padding to move nav bar to the right */
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background: transparent; /* Remove the background of the nav bar */
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: rgb(45, 100, 0);
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #F4EBE8;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #F4EBE8;
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: #F4EBE8; /* Match background color */
+            color: #333;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #00a86b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #007a58;
+        }
+
+        .main-content {
+            text-align: center;
+            color: #333;
+            padding: 50px 20px;
+            display: none; /* Initially hidden */
+            min-height: 100vh;
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .main-content img {
+            max-width: 90%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .main-content button {
+            padding: 10px 20px;
+            background-color: #00a86b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .main-content button:hover {
+            background-color: #007a58;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #D5FFF3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Initially hidden */
+        }
+
+        .back-to-top:hover {
+            background-color: #D5FFF3;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .quiz-container h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-container ol {
+            margin-left: 20px;
+        }
+
+        .quiz-container li {
+            margin-bottom: 10px;
+        }
+
+        .quiz-container a {
+            color: #00a86b;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .quiz-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="ChemistryCornerLogo.png" alt="Chemistry Corner Logo">
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="EssentialElements.html">Essential Elements</a></li>
+                <li><a href="watercycle.html">Water Cycle</a></li>
+                <li><a href="interactive.html">Interactive</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <marquee> <h1> Interactive Elements! </h1> </marquee>
+
+    <div class="quiz-container">
+        <form>
+            <h3>Choose the letter of the correct answer.</h3>
+            <ol>
+                <li>What is the symbol for Iron?</li>
+                <a href="wrong.html">A. Ir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Fe</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. F</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. I</a>
+
+                <li>What is the symbol for Tungsten?</li>
+                <a href="wrong.html">A. Ti</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. W</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Ta</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Y</a>
+
+                <li>Which essential element is most important for maintaining strong bones and teeth?</li>
+                <a href="wrong.html">A. Sodium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Calcium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Chlorine</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Iodine</a>
+
+                <li>What is the symbol for Boron?</li>
+                <a href="correct.html">A. B</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Ba</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Br</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Bh</a>
+
+                <li>What element is crucial for the oxygen-carrying capacity of hemoglobin in the red blood cells?</li>
+                <a href="correct.html">A. Iron</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Magnesium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Zinc</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Copper</a>
+
+                <li>What element represents the symbol Na?</li>
+                <a href="wrong.html">A. Neon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Nitrogen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Sodium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Sulfur</a>
+
+                <li>Which element is known as the basis of all life forms?</li>
+                <a href="wrong.html">A. Oxygen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Hydrogen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Carbon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Nitrogen</a>
+
+                <li>Which element is used in batteries and is crucial for energy storage?</li>
+                <a href="wrong.html">A. Zinc</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Copper</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Lithium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Silver</a>
+
+                <li>Which element has the atomic number 1?</li>
+                <a href="correct.html">A. Hydrogen</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Helium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Lithium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Beryllium</a>
+
+                <li>What is the symbol for Neon?</li>
+                <a href="wrong.html">A. Ne</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Ne</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. N</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Nn</a>
+
+                <li>What is the symbol for Strontium?</li>
+                <a href="wrong.html">A. Sr</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. St</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Sulfur</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">D. Strontium</a>
+
+                <li>What is the symbol for Copper?</li>
+                <a href="correct.html">A. Cu</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Co</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. C</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Cr</a>
+
+                <li>Which element is a noble gas and used in neon signs?</li>
+                <a href="correct.html">A. Neon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Argon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Krypton</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Xenon</a>
+
+                <li>Which element is essential for thyroid hormone production?</li>
+                <a href="wrong.html">A. Fluorine</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Iodine</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Iodine</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Bromine</a>
+
+                <li>What is the symbol for Lead?</li>
+                <a href="wrong.html">A. Pd</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Pt</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Pb</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Li</a>
+
+                <li>What element is crucial for muscle contraction?</li>
+                <a href="wrong.html">A. Sodium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Potassium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Calcium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Magnesium</a>
+
+                <li>What is the symbol for Silver?</li>
+                <a href="wrong.html">A. Ag</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Ag</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Au</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Si</a>
+
+                <li>Which element is used in making strong permanent magnets?</li>
+                <a href="correct.html">A. Neodymium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Neodymium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Nickel</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Cobalt</a>
+
+                <li>What is the symbol for Cobalt?</li>
+                <a href="wrong.html">A. Co</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Co</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Cb</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Ct</a>
+
+                <li>Which element is a key component of glass?</li>
+                <a href="wrong.html">A. Sodium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Calcium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Silicon</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Potassium</a>
+
+                <li>What is the symbol for Molybdenum?</li>
+                <a href="wrong.html">A. Mo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Mo</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Ml</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Mb</a>
+
+                <li>Which element is known for its high melting point and is used in lightbulb filaments?</li>
+                <a href="wrong.html">A. Tungsten</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Tungsten</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Titanium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Tantalum</a>
+
+                <li>Which element is commonly used in making jewelry and is known for its luster?</li>
+                <a href="wrong.html">A. Silver</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Palladium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Gold</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Platinum</a>
+
+                <li>What is the symbol for Zinc?</li>
+                <a href="wrong.html">A. Z</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">B. Zn</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">C. Zn</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Zi</a>
+
+                <li>Which element is used in the manufacture of lightweight, high-strength alloys for aerospace applications?</li>
+                <a href="wrong.html">A. Magnesium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="correct.html">B. Titanium</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">C. Aluminum</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="wrong.html">D. Vanadium</a>
+            </ol>
+        </form>
+    </div>
+</body>
+</html>

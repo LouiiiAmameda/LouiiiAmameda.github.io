@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essential Elements</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            background: #c6dbbc;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background: rgba(189, 233, 148, 0.6);
+            font-family: 'Arial Black', 'Comic Sans';
+            color: #fff;
+            font-size: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(133, 55, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 100px; /* Adjust the size of the logo */
+        }
+
+        nav {
+            margin-left: auto;
+            padding-right: 20px; /* Adjust padding to move nav bar to the right */
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background: transparent; /* Remove the background of the nav bar */
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: rgb(49, 88, 17);
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #84b683;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #558848;
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background: #c6dbbc; /* Match background color */
+            color: #333;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color: #00a86b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #007a58;
+        }
+
+        .main-content {
+            padding: 50px 20px;
+            color: #333;
+            min-height: 100vh;
+            text-align: left; /* Align text to the left */
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            text-align: left; /* Ensure text in paragraphs is left-aligned */
+        }
+
+        .main-content img {
+            max-width: 90%;
+            height: auto;
+            display: block;
+            margin: 20px 0;
+        }
+
+        .main-content button {
+            padding: 10px 20px;
+            background-color: #00a86b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .main-content button:hover {
+            background-color: #007a58;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #00a86b;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Initially hidden */
+        }
+
+        .back-to-top:hover {
+            background-color: #007a58;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="ChemistryCornerLogo.png" alt="Chemistry Corner Logo">
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="EssentialElements.html">Essential Elements</a></li>
+                <li><a href="watercycle.html">Water Cycle</a></li>
+                <li><a href="interactive.html">Interactive</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Essential Elements</h1>
+        <p>The key chemical elements that are crucial for maintaining health and supporting life functions.</p>
+        <button id="learnMoreButton" onclick="scrollToContent()">Learn More</button>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <h1>Essential Elements for Life</h1>
+        <p>Of the approximately 115 elements known, only the 19 highlighted in green in the Figure are absolutely required for humans</p>
+        <img src="PeriodicTableTransparent.png" alt="Periodic Table of Essential Elements">
+        <p>
+            The 19 Essential Elements for Humans:
+            <ol>
+            <li>Hydrogen: Combines with oxygen to form water, a crucial component of all bodily fluids.</li><br/>
+            <li>Carbon: Forms the backbone of organic molecules like proteins, carbohydrates, and fats.</li><br/>
+            <li>Nitrogen: Essential for building proteins and nucleic acids (DNA and RNA).</li><br/>
+            <li>Oxygen: Required for cellular respiration, which produces energy in cells.</li><br/>
+            <li>Sodium: Helps regulate fluid balance and nerve function.</li><br/>
+            <li>Magnesium: Supports muscle and nerve function, and is involved in over 300 biochemical reactions.</li><br/>
+            <li>Phosphorus: Important for energy production, bone health, and forming DNA and RNA.</li><br/>
+            <li>Sulfur: Key component of amino acids and proteins, and helps detoxify the body.</li><br/>
+            <li>Chlorine: Helps maintain fluid balance and is part of digestive juices like hydrochloric acid.</li><br/>
+            <li>Potassium: Regulates fluid balance, muscle contractions, and nerve signals.</li><br/>
+            <li>Calcium: Vital for building and maintaining strong bones and teeth, and for muscle and nerve function.</li><br/>
+            <li>Manganese: Supports metabolism, bone formation, and antioxidant defenses.</li><br/>
+            <li>Iron: Essential for oxygen transport in the blood and energy production.</li><br/>
+            <li>Cobalt: A component of vitamin B12, which is crucial for red blood cell formation and nervous system health.</li><br/>
+            <li>Copper: Helps with iron metabolism, the formation of red blood cells, and maintaining healthy nerves.</li><br/>
+            <li>Zinc: Important for immune function, wound healing, and DNA synthesis</li><br/>
+            <li>Selenium: Acts as an antioxidant and supports immune function.</li><br/>
+            <li>Molybdenum: Helps with the metabolism of certain amino acids and drugs.</li><br/>
+            <li>Iodine: Essential for producing thyroid hormones, which regulate metabolism.</li></ol>
+        </p>
+        <hr>
+        <p>Here are 10 Compounds also essential for humans:
+            <ol>
+            <li>Water (H₂O): Contains Hydrogen and Oxygen and is crucial for hydration, digestion, temperature regulation, and biochemical reactions.</li><br/>
+            <li>Glucose (C₆H₁₂O₆): Composed of Carbon, Hydrogen, and Oxygen, it serves as a primary energy source for cells.</li><br/>
+            <li>Hemoglobin: Contains Carbon, Hydrogen, Oxygen, Nitrogen, and Iron, and is essential for oxygen transport in red blood cells.</li><br/>
+            <li>ATP (Adenosine Triphosphate): Includes Carbon, Hydrogen, Oxygen, Nitrogen, and Phosphorus, and provides energy for cellular processes.</li><br/>
+            <li>DNA (Deoxyribonucleic Acid): Made of Carbon, Hydrogen, Oxygen, Nitrogen, and Phosphorus, it stores genetic information for cellular function and reproduction.</li><br/>
+            <li>RNA (Ribonucleic Acid): Composed of Carbon, Hydrogen, Oxygen, Nitrogen, and Phosphorus, it translates genetic information from DNA into proteins.</li><br/>
+            <li>Cholesterol: Contains Carbon, Hydrogen, and Oxygen, and is important for cell membrane structure, hormone production, and vitamin D synthesis.</li><br/>
+            <li>Vitamins (e.g., Vitamin C): Made of Carbon, Hydrogen, and Oxygen, and are needed for various biochemical processes such as immune function and collagen synthesis.</li><br/>
+            <li>Sodium Chloride (NaCl): Consists of Sodium and Chlorine, and regulates fluid balance, nerve function, and muscle contractions.</li><br/>
+            <li>Calcium Phosphate (Ca₃(PO₄)₂): Includes Calcium, Phosphorus, and Oxygen, and is essential for bone and dental health.</li><br/>
+            </ol>
+        </p>
+    </div>
+
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+
+    <script>
+        function scrollToContent() {
+            document.querySelector('.main-content').style.display = 'block';
+            document.querySelector('#learnMoreButton').style.display = 'none';
+            document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.back-to-top').style.display = 'block';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                document.querySelector('.back-to-top').style.display = 'block';
+            } else {
+                document.querySelector('.back-to-top').style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+</html>

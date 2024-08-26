@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Group 3 - Water Cycle </title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Comic sans, sans-serif;
+            color: #333;
+            background: #bcd4e6;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 10px 20px;
+            background: #004e89;
+            font-family: 'Arial Black', 'Comic Sans';
+            color: #0096c7;
+            font-size: 32px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(133, 55, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header img {
+            height: 100px; /* Adjust the size of the logo */
+        }
+
+        nav {
+            margin-left: auto;
+            padding-right: 20px; /* Adjust padding to move nav bar to the right */
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+            background: transparent; /* Remove the background of the nav bar */
+        }
+
+        nav ul li {
+            margin: 0 10px;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 20px;
+            position: relative;
+            display: inline-block;
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        nav ul li a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #84b683;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+
+        nav ul li a:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #0096c7;
+            transform: scale(1.05);
+        }
+
+        nav ul li a:active {
+            transform: scale(0.95);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            background:  #bcd4e6; /* Match background color */
+            color: #333;
+            padding: 0 20px; /* Ensure text is not too far off the side */
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            background-color:  #004e64;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .hero button:hover {
+            background-color:  #0096c7;
+            transform: scale(1.05);
+        }
+
+        .main-content {
+            text-align: center;
+            color: #333;
+            padding: 50px 20px;
+            display: none; /* Initially hidden */
+            min-height: 100vh;
+        }
+
+        .main-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .main-content img {
+            max-width: 90%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .main-content button {
+            padding: 10px 20px;
+            background-color: #004e64;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .main-content button:hover {
+            background-color: #0096c7;
+            transform: scale(1.05);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #004e64;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            display: none; /* Initially hidden */
+        }
+
+        .back-to-top:hover {
+            background-color: #0096c7;
+            transform: scale(1.05);
+        }
+    </style>
+    <script>
+        function scrollToContent() {
+            const mainContent = document.getElementById('mainContent');
+            const learnMoreButton = document.getElementById('learnMoreButton');
+
+            // Show the main content
+            mainContent.style.display = 'block';
+
+            // Smooth scroll to the main content
+            mainContent.scrollIntoView({ behavior: 'smooth' });
+
+            // Hide the Learn More button
+            learnMoreButton.style.display = 'none';
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTopButton');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="ChemistryCornerLogo.png" alt="Chemistry Corner Logo">
+        <nav>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="EssentialElements.html">Essential Elements</a></li>
+                <li><a href="watercycle.html">Water Cycle</a></li>
+                <li><a href="interactive.html">Interactive</a></li>
+                <li><a href="references.html">References</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>WATER CYCLE</h1>
+        <p>In the three states of solid, liquid, and gas, water (H2O) shows different behaviors. 
+        Since stable hydrogen bonds allow water molecules to form crystalline particles in the solid state (ICE), 
+        ice is less dense than liquid water. Since hydrogen connections between water molecules are always being formed and broken when it is liquid, 
+        water can flow and conform to the shape of its container. Changes in temperature and pressure cause various states to transition between one another:
+        <b><u>MELTING, FREEZING, EVAPORATION, and CONDENSATION.</u></b></p>
+        <button id="learnMoreButton" onclick="scrollToContent()">Learn More</button>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <h1 align="center">HOW WATER BEHAVES IN ITS DIFFERENT STATES</h1>
+        <img src="watercycle.png" alt="Water Cycle" height="500" width="500"><br/>
+
+<img src="ice.jpeg" alt="Water Cycle" height="150" width="150">
+        <h2>SOLID</h2>
+        <p>In its solid state, water forms ice with a crystalline structure due to stable hydrogen bonds.
+        Because of this structure, ice is less dense than water and can float. 
+        Ice doesn’t become liquid until it melts.</p>
+
+<img src="liquid.jpeg" alt="Water Cycle" height="150" width="150">
+       <h2>LIQUID</h2>
+        <p>Water flows with flexible hydrogen bonds. Liquid water takes the shape of its container but has a definite volume.</p>
+<img src="gas.jpeg" alt="Water Cycle" height="150" width="150">
+       <h2>GAS (water vapor)</h2>
+        <p>Water molecules move freely. In the water cycle, evaporation occurs when liquid water absorbs heat and turns into vapor, rising into the atmosphere. It has no definite shape or volume.</p>
+<hr style="height:30px">
+<h1 align="center">ROLE IN THE WATER CYCLE</h1>
+<video controls>
+  <source src="From the Kettle Boiling Water Comes Steam.mp4" type="video/mp4">
+</video>
+        <h2>EVAPORATION</h2>
+        <p>Type of vaporization that occurs on the surface of a liquid as it changes into the gas phase. A high concentration of the evaporating substance in the surrounding gas significantly slows down evaporation, such as when humidity affects rate of evaporation of water. </p>
+
+<img src="condensation.jpeg" alt="Water Cycle" height="250" width="150">
+        <h2>CONDENSATION</h2>
+        <p> is the change of the state of matter from the gas phase into the liquid phase, and is the reverse of vaporization. The word most often refers to the water cycle. </p>
+<img src="Precipitation.jpeg" alt="Water Cycle" height="250" width="150">
+        <h2>PRECIPITATION</h2>
+        <p>In meteorology, precipitation is any product of the condensation of atmospheric water vapor that falls from clouds due to gravitational pull. </p>
+
+        <button class="back-to-top" id="backToTopButton" onclick="scrollToTop()">Back to Top</button>
+    </div>
+</body>
+</html>
